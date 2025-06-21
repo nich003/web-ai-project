@@ -1,14 +1,17 @@
 <template>
     <div>
         <h2>This is my web ai project</h2>
-        <p>Home page</p>
+        <FileUpload />
     </div>
 </template>
 
 <script>
+import FileUpload from '../components/FileUpload.vue';
 export default {
     name: "HomeView",
-    components: {},
+    components: {
+        FileUpload,
+    },
     data: () => ({
         resumeFile: ""
     }),
