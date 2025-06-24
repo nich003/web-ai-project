@@ -4,7 +4,7 @@
         <label for="file-input" class="upload-btn">
             Upload
         </label>
-        <input id="file-input" type="file" @change="onSelect" hidden />
+        <input id="file-input" type="file" @change="onSelect" @click="sendFiles" hidden />
     </div>
 </template>
 
@@ -22,7 +22,14 @@ export default {
         },
         sendFiles() {
             // do backend first then come back to this
+            const data = new FormData()
+            data.append('file', this.file)
 
+            fetch("http://localhost:8000/api/test")
+                .then((res) => {
+                    console.log(res)
+                })
+                .catch(console.error)
         },
 
     }
